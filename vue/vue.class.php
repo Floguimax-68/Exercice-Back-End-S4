@@ -31,10 +31,11 @@ class Vue {
       
   *******************************************************/
   public function afficher($data) {
-    $title = TITREONGLET;
-    $header = NOMSITE;
+    global $conf;
+    $title = $conf->titreOnglet;
+    $header = $conf->nomSite;
 //    $titre = "";      // Le titre de la page est généré dans le fichierVue
-    $menu = MENU;
+    $menu = $conf->menu;
 
     extract($data);   // Extrait les valeurs du tableau associatif $data dans des variables
 

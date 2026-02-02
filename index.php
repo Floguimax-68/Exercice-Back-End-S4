@@ -1,7 +1,9 @@
 <?php
-require "config/config.php";
+require "config/config.class.php";
 require "controleur/routeur.class.php";
 
+
+$conf = new Config();
 $routeur = new Routeur();
 $routeur->routerRequete();
 
