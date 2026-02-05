@@ -49,16 +49,12 @@ abstract class Database {
     if (!isset($this->bdd))     // Si la connexion à la BDD n'est pas encore établie
       try {  // Connexion à la base de données et initialisation de la propriété bdd
         $options=array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
-        $this->bdd = new PDO('mysql:host='.$conf->DBHost.';dbname='.$conf->DBName, $conf->DBUser, $conf->DBPWD, $options);
+        $this->bdd = new PDO('mysql:host='.$conf->DBHost.';dbname='.$conf->DBName, $conf->DBUser, $conf->DBPwd, $options);
       }
       catch(Exception $err) {   // Erreur lors de la connexion à la BDD
         throw new Exception("Connexion à la BDD"); //.$err->getMessage());
       }
 
     return $this->bdd;
-  }
-
-  private function cico(){
-    
-  }
+      }
 }   // Balise PHP non fermée pour éviter de retourner des caractères "parasites" en fin de traitement

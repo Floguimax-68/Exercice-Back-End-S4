@@ -15,7 +15,7 @@ class Vue {
     Sortie :
       $fichierVue [string] : nom du fichier requis pour générer le contenu à afficher dans la vue
 
-    Retour :  
+    Retour : 
       
   *******************************************************/
   public function __construct($action) {

@@ -1,17 +1,21 @@
 <?php
 
-class Config
+abstract class Config
 {
-    // Definition des paramètres de la BDD
-    public $DBHost = "localhost";
-    public $DBName = "magasin";
-    public $DBUser = "root";
-    public $DBPWD = "";
-    // Définition des paramètres du site
-    public $titreOnglet = "Magasin";   // Titre de l'onglet
-    public $nomSite = "Web Shop";   // Titre de l'onglet
-    // Menu par défaut
-    public $menu = "<a class='lien' href='index.php?action=clients'>Clients</a>
-                <a class='lien' href='index.php?action=articles'>Articles</a>
-                <a class='lien' href='index.php?action=commandes'>Commandes</a>";
+
+
+    // public static $DBHost = "localhost";
+    // public static $DBName = "magasin";
+    // public static $DBUser = "root";
+    // public static $DBPwd  = "";
+
+
+    public const TITRE_ONGLET = "Magasin";
+    public const NOM_SITE     = "Web Shop";
+
+    public const MENU = "
+        <a class='lien' href='index.php?action=clients'>Clients</a>
+        <a class='lien' href='index.php?action=articles'>Articles</a>
+        <a class='lien' href='index.php?action=commandes'>Commandes</a>
+    ";
 }
