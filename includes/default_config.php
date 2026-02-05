@@ -1,6 +1,7 @@
 <?php
 
 require_once "config/config.class.php"; // inclusion de la classe de configuration du fichier config.class.php
+require_once "html/tableau.class.php"; // inclusion de la classe Tableau pour la génération de tableaux HTML
 
 /************************************************************************* */
 /********************************************* */

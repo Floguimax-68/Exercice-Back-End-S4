@@ -1,4 +1,5 @@
 <?php
+require_once "includes/default_config.php"; // inclusion du fichier de configuration par défaut
 /*********************************************************
 Classe permettant la communication avec la base de données
 *********************************************************/
