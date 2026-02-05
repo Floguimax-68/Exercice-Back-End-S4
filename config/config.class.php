@@ -1,15 +1,14 @@
 <?php
-
+// class contenant les parametres de configuration de l'application
 abstract class Config
 {
+    //definition des parametre de connexion a la base de données
+    public static $DB_host = "localhost";
+    public static $DB_name = "magasin";
+    public static $DB_user = "root";
+    public static $DB_pwd  = "";
 
-
-    // public static $DBHost = "localhost";
-    // public static $DBName = "magasin";
-    // public static $DBUser = "root";
-    // public static $DBPwd  = "";
-
-
+    //definition des parametre du site
     public const TITRE_ONGLET = "Magasin";
     public const NOM_SITE     = "Web Shop";
 
