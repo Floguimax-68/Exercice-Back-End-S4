@@ -50,6 +50,9 @@ class Routeur {
                     throw new Exception("Aucun identifiant de commande");
                 break;
 
+            case "ajoutClient":
+                $this->ctlClient->ajoutClient(); break;
+                
             default: 
                 throw new Exception("Action non valide");       
             }     

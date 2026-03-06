@@ -14,8 +14,8 @@ class Client extends Database {
       [array] : Tableau associatif contenant la liste des clients
   *******************************************************/
   public function getClients() {
-    //  $req = 'SELECT id_client AS "N° Client", nom AS "NOM", prenom AS "Prénom", adresse AS "Adresse", ville AS "Ville", mail AS "Adresse email", age AS "Age" FROM client ORDER BY nom, prenom;';
-    $req = 'SELECT id_client AS "N° Client", nom AS "NOM", prenom AS "Prénom" FROM client ORDER BY nom, prenom;';
+     $req = 'SELECT id_client AS "N° Client", nom AS "NOM", prenom AS "Prénom", adresse AS "Adresse", ville AS "Ville", mail AS "Adresse email", age AS "Age" FROM client ORDER BY nom, prenom;';
+    // $req = 'SELECT id_client AS "N° Client", nom AS "NOM", prenom AS "Prénom" FROM client ORDER BY nom, prenom;';
     $clients = $this->execReq($req);
     return $clients;
   }
@@ -40,4 +40,12 @@ class Client extends Database {
     // Ou :
     //return isset($resultat[0]) ? $resultat[0] : FALSE;    // Retourne FALSE si le client n'existe pas
   }
+  
+  
+  public function addClient($nom, $prenom, $adresse, $ville, $mail, $age){
+    $req = 'INSERT INTO client (nom, prenom, adresse, ville, mail, age)
+  VALUES (?, ?, ?, ?, ?, ?)';
+$resultat = $this->execReqPrep($req, array($nom, $prenom, $adresse, $ville, $mail, $age)); 
+return $resultat;
+}
 }   // Balise PHP non fermée pour éviter de retourner des caractères "parasites" en fin de traitement

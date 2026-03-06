@@ -3,8 +3,9 @@ require_once "modele/client.class.php";
 require_once "vue/vue.class.php";
 /*************************************
 Classe chargée de l'affichage des vues
-*************************************/
-class ctlClient {
+ *************************************/
+class ctlClient
+{
 
   private $client; //Objet du modèle "article"
 
@@ -17,9 +18,10 @@ class ctlClient {
 
     Retour : 
       
-  *******************************************************/
+   *******************************************************/
 
-  public function __construct() {
+  public function __construct()
+  {
     $this->client = new Client();
   }
 
@@ -31,12 +33,18 @@ class ctlClient {
   
     Retour : 
       
-  *******************************************************/
-  public function Clients() {
+   *******************************************************/
+  public function Clients()
+  {
     $clients = $this->client->getClients();        //Récupère la liste des articles
 
     $vue = new Vue("Clients");                       //Instancie la vue appropriée
-    $vue->afficher(array("clients" => $clients));   
+    $vue->afficher(array("clients" => $clients));
+  }
 
+  public function ajoutClient()
+  {
+    $vue = new Vue("AjoutClient");
+    $vue->afficher(array());
   }
 }

@@ -27,17 +27,43 @@ Retour :
 
 
     /************************************************ 
-retourne une ligne <tr> de tableau HTML
-entréé : 
-- $data : un tableau de données à afficher dans la ligne
-- $tag : le type de balise (td ou th) dans la ligne
-Retour : 
-[string] : une ligne de tableau HTML*/
+    retourne une ligne <tr> de tableau HTML
+    entréé : 
+    - $data : un tableau de données à afficher dans la ligne
+    - $tag : le type de balise (td ou th) dans la ligne
+    Retour : 
+    [string] : une ligne de tableau HTML*/
 
 
     public static function head($data = [])
     {
-        return '<table><thead>' . self::row($data, 'th') . '</thead>'; //self et pas $this car function static donc :: et pas ->
-        return '<table>'
+        if ($data) {
+           return '<table><thead>' . self::row($data, 'th') . '</thead>'; //self et pas $this car function static donc :: et pas ->
+            
+        } else
+        return '<table>';
+    }
+
+
+
+
+    public static function body($data = [])
+    {
+        $retour = '';
+        foreach ($data as $l) {
+            $retour .= self::row($l);
+        }
+        return '<tbody>' . $retour . '</tbody>';
+    }
+
+
+
+    public static function foot($data = [])
+    {
+        if ($data) {
+            return '<tfoot>' . self::row($data, 'th') . '</tfoot></table>';
+        } else {
+            return '</table>';
+        }
     }
 }
