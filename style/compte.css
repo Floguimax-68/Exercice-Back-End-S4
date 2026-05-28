@@ -1,0 +1,155 @@
+/* Page compte : style dédié conforme à la maquette */
+
+.compte-page {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 28px 24px 40px;
+    color: #111;
+}
+
+.titre-compte-page {
+    text-align: center;
+    font-size: 58px;
+    font-weight: 400;
+    margin: 24px 0 28px;
+    letter-spacing: 1px;
+}
+
+.message-compte-page {
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    border: 1px solid #000;
+    background: #f9f9f9;
+}
+
+.formulaire-compte-page {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.bloc-compte-page h3 {
+    margin: 0 0 16px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.grille-compte-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 46px;
+}
+
+.champ-compte-page {
+    min-width: 0;
+}
+
+.champ-compte-page--full {
+    grid-column: 1 / -1;
+    max-width: 100%;
+}
+
+.champ-compte-page__label {
+    display: block;
+    margin: 0 0 10px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #111;
+}
+
+.champ-compte-page__input {
+    width: 100%;
+    min-height: 44px;
+    border: 1px solid #909090;
+    border-radius: 5px;
+    padding: 10px 14px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: inherit;
+    background: #fff;
+    color: #111;
+}
+
+.champ-compte-page__input[type="password"] {
+    width: 100%;
+}
+
+.champ-compte-page__input--password {
+    letter-spacing: 0.12em;
+}
+
+.champ-compte-page__input:disabled {
+    background: #f4f4f4;
+    color: #666;
+    cursor: not-allowed;
+    -webkit-text-fill-color: #666;
+    opacity: 1;
+}
+
+.champ-compte-page__input::placeholder {
+    color: #8a8a8a;
+    opacity: 1;
+}
+
+.champ-compte-page__input:focus {
+    outline: none;
+    border-color: #333;
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.05);
+}
+
+.actions-compte-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+
+.bouton-enregistrer-compte,
+.bouton-deconnexion-compte {
+    min-width: 190px;
+    min-height: 44px;
+    padding: 0 20px;
+    border: 0;
+    border-radius: 14px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: opacity 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+.bouton-enregistrer-compte {
+    background: #000;
+    color: #fff;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.bouton-enregistrer-compte.is-actif {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.bouton-deconnexion-compte {
+    background: #f1f1f1;
+    color: #111;
+}
+
+.bouton-deconnexion-compte:hover {
+    background: #e7e7e7;
+}
+
+@media (max-width: 900px) {
+    .grille-compte-page {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .champ-compte-page--full {
+        max-width: 100%;
+    }
+
+    .titre-compte-page {
+        font-size: 40px;
+    }
+}

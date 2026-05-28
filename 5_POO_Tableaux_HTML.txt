@@ -1,0 +1,34 @@
+IUT DE MULHOUSE  BUT MMI 2 ème  Année 
+R4D07 – Développement back  8 6. TABLEAU HTML EN POO 
+L'objectif est de générer le code HTML d'un tableau  HTML à partir d'une classe. 
+ 
+Créez la classe Tableau  dans le dossier includes/html  (à créer). 
+ 
+Cette classe comportera les 4 méthodes statiques su ivantes : 
+• row ($data , $tag ='td' ) : Retourne une ligne <tr > … </tr > d'un tableau HTML en y insérant les 
+données transmises dans le tableau $data .  
+Chaque donnée est insérée dans une balise <td> ou <th>. 
+Le paramètre $tag  est optionnel, et vaut par défaut 'td' . 
+• head ($data =[])  : Retourne l'ouverture d'un tableau HTML (balise <table >) et ajoute un entête 
+<thead > … </thead > à partir du tableau $data  si celui-ci n'est pas vide. 
+Si présents, les éléments du tableau $data  seront les titres de colonnes (balise <th>). 
+• body ($data ) : Retourne les lignes <tr > … </tr > du tableau HTML dans une balise <tbody > … 
+</tbody >.  
+Remarque : $data  est un tableau à deux dimensions.  
+• foot ($data =[])  : Retourne la fermeture d'un tableau HTML (balise </table >).  
+Si le tableau $data  n'est pas vide, ajoute avant la balise </table > un pied de tableau <tfoot > … 
+</tfoot > contenant une ligne <tr > … </tr > avec les éléments de $data . 
+ 
+N'oubliez pas d'ajouter tous les commentaires utile s à la compréhension de votre code. 
+ 
+ 
+Application : Utilisez la classe Tableau  pour générer les vues concernées. 
+ 
+Indications :  
+• Pour récupérer les titres des colonnes à afficher,  utilisez la fonction array_keys () . 
+• Pour rassembler deux tableaux en un seul, utilisez  la fonction array_merge () . 
+ 
+ 
+ 
+ 
+  

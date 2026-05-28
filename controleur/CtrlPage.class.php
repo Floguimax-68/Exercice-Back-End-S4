@@ -12,5 +12,6 @@ class CtlPage {
         $vue = new Vue("Erreur");
         $vue->afficher(array("message" => $message));
     }
+    
 
 }

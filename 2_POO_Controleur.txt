@@ -1,0 +1,38 @@
+IUT DE MULHOUSE  BUT MMI 2 ème  Année 
+R4D07 – Développement back  3 3. CONTROLEURS EN POO 
+Dans une architecture MVC, le Contrôleur occupe une  place centrale car c'est lui qui fait la liaison e ntre le 
+Modèle (chargé de récupérer les données) et la Vue (chargée d'afficher les données). 
+ 
+Pour rappel : 
+• Notre Modèle repose sur les classes Article , Client  et Commande , chargées de communiquer avec 
+la BDD,  
+• La Vue est mise en œuvre par la classe Vue . 
+ 
+Afin de gagner en cohérence, la prochaine étape con siste à appliquer la POO au Contrôleur en créant le s 
+classes CtlArticle , CtlClient  et CtlCommande  chargées d'exécuter les actions demandées par 
+l'utilisateur. 
+ Dans une application MVC, chaque page du site corr espond à un contrôleur. 
+ 
+Exemple  : Le contrôleur ctlArticle 
+Mettez en œuvre la POO au niveau du contrôleur des articles. 
+ 
+La classe CtlArticle  doit comporter : 
+• Une propriété (privée) $article  : Objet de la classe Article  (du Modèle), instancié par le 
+constructeur de la classe CtlArticle , permettant d'interroger la BDD. 
+• Une méthode articles ()  chargée de récupérer la liste des articles et d'af ficher le résultat dans la 
+Vue appropriée. 
+ 
+Indications :  
+• Créez la classe CtlArticle  dans le dossier controleur/ . 
+• Modifiez le script controleur.php  pour utiliser cette classe. 
+• N'oubliez pas d'ajouter tous les commentaires util es à la compréhension de vos scripts. 
+• Vérifiez le fonctionnement du site. 
+ 
+• Sur le même modèle, créez les classes CtlClient  et CtlCommande  dans les fichiers appropriés. 
+• Ajoutez également la classe CtlPage  destinée à gérer les pages Accueil  et Erreur , qui n'ont pas 
+besoin d'accéder au Modèle. 
+• Modifier le script controleur.php  en conséquence. 
+ 
+Remarque : Le fichier controleur.php  ne sert plus à grand-chose. Nous y reviendrons un peu plus loin… 
+ 
+  

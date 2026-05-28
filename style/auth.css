@@ -1,0 +1,247 @@
+.page-auth {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.authentification {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+    background: #fff;
+}
+
+.formulaire-connexion {
+    position: absolute;
+    inset: 0;
+    display: block;
+    box-sizing: border-box;
+    z-index: 2;
+    pointer-events: none; /* allow clicks only on card */
+}
+.form-frame { width: 100%; height: 100%; position: relative; }
+
+/* Single white card that moves left/right to cover images */
+.form-card {
+    position: absolute;
+    top: 0;
+    left: 0; /* left half by default */
+    width: 50vw; /* cover exactly one image half */
+    height: 100vh;
+    background: #ffffff;
+    padding: 36px 40px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.14);
+    border-radius: 0; /* flush with edges */
+    box-sizing: border-box;
+    transition: transform 520ms cubic-bezier(.22,.9,.27,1), box-shadow 220ms ease;
+    will-change: transform;
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    transform: translateX(0);
+    overflow: hidden;
+}
+/* when signup: move to right half using transform for better performance */
+.authentification.is-signup .form-card { transform: translateX(50vw); }
+
+/* inner container to constrain form width */
+.form-card .fields { width: 100%; max-width: 480px; }
+
+/* Field groups for login / signup - crossfade */
+.fields { position: relative; transition: opacity 280ms ease, visibility 280ms ease; }
+.fields.hidden { opacity: 0; visibility: hidden; height: 0; overflow: hidden; position: absolute; left: 0; top: 0; width: 100%; }
+.fields.visible { opacity: 1; visibility: visible; position: relative; height: auto; }
+
+.form-card form {
+    width: 100%;
+}
+
+.form-actions { margin-top: 10px; }
+
+/* Title + subtitle area */
+.titre-formulaire-authentification {
+    font-size: 48px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 6px 0;
+    letter-spacing: 1px;
+}
+.sous-titre-authentification {
+    text-align: center;
+    color: #6b6b6b;
+    margin: 0 0 14px 0;
+    font-size: 14px;
+}
+
+/* Decorative stripe removed per user request */
+
+/* Form fields */
+.champ-formulaire-authentification { margin-bottom: 12px; position: relative; }
+.etiquette-authentification { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+.champ-saisie-authentification {
+    width: 100%;
+    padding: 14px 12px;
+    font-size: 14px;
+    border: 1px solid #000000; /* contour noir */
+    border-radius: 2px;
+    box-sizing: border-box;
+    background: #fff;
+    color: #000000;
+    outline: none;
+}
+.champ-saisie-authentification:focus { border-color: #000000; box-shadow: 0 0 0 3px rgba(0,0,0,0.06); }
+.champ-saisie-authentification::placeholder { color: #6b6b6b; opacity: 1; }
+.champ-saisie-authentification:-ms-input-placeholder { color: #6b6b6b; }
+.champ-saisie-authentification::-ms-input-placeholder { color: #6b6b6b; }
+
+/* Submit button — default: white with black outline; hover: black background, white text */
+.bouton-soumission-authentification {
+    display: block;
+    width: 100%;
+    padding: 14px 18px;
+    background: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 2px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 6px;
+    transition: background-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+}
+.bouton-soumission-authentification:hover,
+.bouton-soumission-authentification:focus {
+    background: #000000;
+    color: #ffffff;
+    outline: none;
+}
+.bouton-soumission-authentification:focus-visible {
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.12);
+}
+
+.lien-aide { text-align: center; margin-top: 12px; font-size: 13px; color: #6b6b6b; }
+.lien-aide a { color: #6b6b6b; text-decoration: none; }
+.lien-aide a:hover { text-decoration: underline; }
+
+/* Image area */
+/* Background halves */
+.image-half {
+    position: absolute;
+    top: 0;
+    width: 50vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 0;
+}
+.image-left { left: 0; }
+.image-right { right: 0; }
+.image-half .image-connexion__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Page compte */
+.compte-page {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 28px 24px 40px;
+    color: #111;
+}
+.titre-compte-page {
+    text-align: center;
+    font-size: 58px;
+    font-weight: 400;
+    margin: 24px 0 28px;
+    letter-spacing: 1px;
+}
+.message-compte-page {
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    border: 1px solid #000;
+    background: #f9f9f9;
+}
+.formulaire-compte-page {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+.bloc-compte-page h3 {
+    margin: 0 0 16px;
+    font-size: 22px;
+    font-weight: 700;
+}
+.grille-compte-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 46px;
+}
+.champ-compte-page--full {
+    grid-column: 1 / -1;
+    max-width: 50%;
+}
+.champ-compte-page__input {
+    width: 100%;
+    min-height: 44px;
+    border: 1px solid #909090;
+    border-radius: 5px;
+    padding: 10px 14px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: inherit;
+    background: #fff;
+    color: #111;
+}
+.champ-compte-page__input::placeholder {
+    color: #8a8a8a;
+    opacity: 1;
+}
+.champ-compte-page__input:focus {
+    outline: none;
+    border-color: #333;
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.05);
+}
+.actions-compte-page {
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+}
+.bouton-enregistrer-compte,
+.bouton-deconnexion-compte {
+    min-width: 190px;
+    min-height: 44px;
+    padding: 0 20px;
+    border: 0;
+    border-radius: 14px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: opacity 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+.bouton-enregistrer-compte {
+    background: #000;
+    color: #fff;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.bouton-enregistrer-compte.is-actif {
+    opacity: 1;
+    cursor: pointer;
+}
+.bouton-deconnexion-compte {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .grille-compte-page {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .champ-compte-page--full {
+        max-width: 100%;
+    }
+    .titre-compte-page {
+        font-size: 40px;
+    }
+}

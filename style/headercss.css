@@ -1,0 +1,112 @@
+/* Header boutique - version sobre pour site blanc */
+.header-boutique {
+    background: #ffffff;
+    color: #000000;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.header-boutique-titre {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.header-boutique-conteneur {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+
+.header-boutique-haut {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 24px;
+}
+
+.header-boutique-logo img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.header-boutique-actions {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.header-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #000000;
+}
+
+.header-btn-icone {
+    width: 16px;
+    height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-btn-icone img {
+    width: 16px;
+    height: 16px;
+    display: block;
+    object-fit: contain;
+}
+
+.header-btn-texte {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+}
+
+.header-boutique-menu {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    color: #000000;
+}
+
+.header-boutique-menu-item {
+    display: inline-flex;
+    align-items: center;
+    color: #000000;
+}
+
+.footer-site {
+    color: #000000;
+    background: #ffffff;
+}
+
+@media (max-width: 900px) {
+    .header-boutique-haut {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-boutique-actions {
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 640px) {
+    .header-boutique-menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

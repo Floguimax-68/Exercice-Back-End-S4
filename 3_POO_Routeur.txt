@@ -1,0 +1,17 @@
+IUT DE MULHOUSE  BUT MMI 2 ème  Année 
+R4D07 – Développement back  4 4. ROUTEUR EN POO 
+Le routage consiste à exécuter les fonctions approp riées pour traiter la page demandée par l'utilisate ur. 
+Dans l'état actuel, cette fonction est réalisée dan s le fichier index.php . 
+Pour plus de cohérence, nous allons déplacer le rou tage dans le contrôleur, et y appliquer la POO : 
+ 
+Créez la classe Routeur  comportant :  
+• Les propriétés (privées) $ctlClient , $ctlArticle , $ctlCommande  et $ctlPage , instanciés par le 
+constructeur. 
+• La méthode routerRequete ()  qui contiendra le routeur actuellement dans le scr ipt index.php . 
+• Tous les commentaires utiles à la compréhension du  script. 
+• (Supprimez le fichier controleur.php  qui n'a plus lieu d'être.) 
+ 
+Il faudra aussi adapter le script index.php  (qui sera réduit à sa plus simple expression). 
+ 
+ 
+  

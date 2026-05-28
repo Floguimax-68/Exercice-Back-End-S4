@@ -1,12 +1,11 @@
 <?php
-require_once "includes/default_config.php"; // inclusion du fichier de configuration par défaut
 /*********************************************************
 Classe permettant la communication avec la base de données
 *********************************************************/
 abstract class Database {
 
   // Objet permettant la connexion à la BDD
-  private $bdd;
+  protected $bdd;
 
   /*******************************************************
   Execution d'une requête simple 
@@ -45,17 +44,17 @@ abstract class Database {
     Retour : 
       [object] : Objet de type PDO
   *******************************************************/
-  private function connexionBDD() {
-    global $conf;
+  protected function connexionBDD() {
+    global $Conf;
     if (!isset($this->bdd))     // Si la connexion à la BDD n'est pas encore établie
       try {  // Connexion à la base de données et initialisation de la propriété bdd
         $options=array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
-        $this->bdd = new PDO('mysql:host='.$conf->DBHost.';dbname='.$conf->DBName, $conf->DBUser, $conf->DBPwd, $options);
+        $this->bdd = new PDO('mysql:host='.$Conf->DBHost.';dbname='.$Conf->DBName, $Conf->DBUser, $Conf->DBPwd, $options);
       }
       catch(Exception $err) {   // Erreur lors de la connexion à la BDD
         throw new Exception("Connexion à la BDD"); //.$err->getMessage());
       }
 
     return $this->bdd;
-      }
+  }
 }   // Balise PHP non fermée pour éviter de retourner des caractères "parasites" en fin de traitement
