@@ -1,8 +1,10 @@
 .authentification {
     position: relative;
-    width: 100vw;
+    width: 100%;
+    max-width: 100%;
     min-height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
     background: #fff;
 }
 
@@ -21,7 +23,7 @@
     position: absolute;
     top: 0;
     left: 0; /* left half by default */
-    width: 50vw; /* cover exactly one image half */
+    width: 50%; /* cover exactly one image half */
     height: 100vh;
     background: #ffffff;
     padding: 36px 40px;
@@ -39,7 +41,7 @@
     overflow: hidden;
 }
 /* when signup: move to right half using transform for better performance */
-.authentification.is-signup .form-card { transform: translateX(50vw); }
+.authentification.is-signup .form-card { transform: translateX(100%); }
 
 /* inner container to constrain form width */
 .form-card .fields { width: 100%; max-width: 480px; }
@@ -124,7 +126,7 @@
 .image-half {
     position: absolute;
     top: 0;
-    width: 50vw;
+    width: 50%;
     height: 100vh;
     overflow: hidden;
     z-index: 0;
