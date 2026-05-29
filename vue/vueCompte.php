@@ -32,11 +32,11 @@ function placeholderCompte($tableau, $cle, $libelle) {
             <div class="grille-compte-page">
                 <div class="champ-compte-page">
                     <label for="nom" class="champ-compte-page__label">Nom</label>
-                    <input type="text" name="nom" id="nom" class="champ-compte-page__input" value="<?= valeurHtmlCompte($utilisateur, 'nom') ?>" data-initial="<?= valeurHtmlCompte($utilisateur, 'nom') ?>" placeholder="<?= placeholderCompte($utilisateur, 'nom', 'Nom') ?>">
+                    <input type="text" name="nom" id="nom" class="champ-compte-page__input" value="<?= valeurHtmlCompte($utilisateur, 'nom') ?>" data-initial="<?= valeurHtmlCompte($utilisateur, 'nom') ?>" placeholder="<?= placeholderCompte($utilisateur, 'nom', 'Nom') ?>" pattern="^[A-Za-zÀ-ÿ' -]+$" title="Le nom ne doit contenir aucun chiffre">
                 </div>
                 <div class="champ-compte-page">
                     <label for="prenom" class="champ-compte-page__label">Prénom</label>
-                    <input type="text" name="prenom" id="prenom" class="champ-compte-page__input" value="<?= valeurHtmlCompte($utilisateur, 'prenom') ?>" data-initial="<?= valeurHtmlCompte($utilisateur, 'prenom') ?>" placeholder="<?= placeholderCompte($utilisateur, 'prenom', 'Prénom') ?>">
+                    <input type="text" name="prenom" id="prenom" class="champ-compte-page__input" value="<?= valeurHtmlCompte($utilisateur, 'prenom') ?>" data-initial="<?= valeurHtmlCompte($utilisateur, 'prenom') ?>" placeholder="<?= placeholderCompte($utilisateur, 'prenom', 'Prénom') ?>" pattern="^[A-Za-zÀ-ÿ' -]+$" title="Le prénom ne doit contenir aucun chiffre">
                 </div>
                 <div class="champ-compte-page">
                     <label for="mot_de_passe" class="champ-compte-page__label">Mot de passe</label>
@@ -68,11 +68,11 @@ function placeholderCompte($tableau, $cle, $libelle) {
             <div class="grille-compte-page">
                 <div class="champ-compte-page">
                     <label for="mail" class="champ-compte-page__label">Adresse e-mail</label>
-                    <input type="email" name="mail" id="mail" class="champ-compte-page__input" value="<?= valeurHtmlCompte($utilisateur, 'mail') ?>" data-initial="<?= valeurHtmlCompte($utilisateur, 'mail') ?>" placeholder="<?= placeholderCompte($utilisateur, 'mail', 'Adresse e-mail') ?>">
+                    <input type="email" name="mail" id="mail" class="champ-compte-page__input" value="<?= valeurHtmlCompte($utilisateur, 'mail') ?>" data-initial="<?= valeurHtmlCompte($utilisateur, 'mail') ?>" placeholder="exemple@mail.com" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" title="Saisissez une adresse email valide contenant un @">
                 </div>
                 <div class="champ-compte-page">
                     <label for="tel" class="champ-compte-page__label">Numéro de téléphone</label>
-                    <input type="tel" name="tel" id="tel" class="champ-compte-page__input" value="<?= valeurHtmlCompte($utilisateur, 'tel') ?>" data-initial="<?= valeurHtmlCompte($utilisateur, 'tel') ?>" placeholder="<?= placeholderCompte($utilisateur, 'tel', 'Numéro de téléphone') ?>">
+                    <input type="tel" name="tel" id="tel" class="champ-compte-page__input" value="<?= valeurHtmlCompte($utilisateur, 'tel') ?>" data-initial="<?= valeurHtmlCompte($utilisateur, 'tel') ?>" placeholder="<?= placeholderCompte($utilisateur, 'tel', 'Numéro de téléphone') ?>" pattern="^[0-9+() .-]*$" title="Le numéro de téléphone ne doit pas contenir de lettres">
                 </div>
                 <div class="champ-compte-page">
                     <label for="pays" class="champ-compte-page__label">Pays</label>

@@ -51,9 +51,12 @@ class CtlAuth {
 
                 // Validations
                 if (empty($donnees['nom'])) throw new Exception("Le nom est requis.");
+                if (!preg_match("/^[A-Za-zÀ-ÿ' -]+$/u", $donnees['nom'])) throw new Exception("Le nom ne doit contenir que des lettres.");
                 if (empty($donnees['prenom'])) throw new Exception("Le prénom est requis.");
+                if (!preg_match("/^[A-Za-zÀ-ÿ' -]+$/u", $donnees['prenom'])) throw new Exception("Le prénom ne doit contenir que des lettres.");
                 if (empty($donnees['mail'])) throw new Exception("L'email est requis.");
-                if (!filter_var($donnees['mail'], FILTER_VALIDATE_EMAIL)) throw new Exception("L'email est invalide.");
+                if (!filter_var($donnees['mail'], FILTER_VALIDATE_EMAIL)) throw new Exception("ceci n'est pas une adresse mail valide");
+                if (!preg_match("/^[0-9+() .-]*$/", $donnees['tel'])) throw new Exception("Le numéro de téléphone ne doit pas contenir de lettres.");
                 if (empty($donnees['mot_de_passe'])) throw new Exception("Le mot de passe est requis.");
                 if (strlen($donnees['mot_de_passe']) < 6) throw new Exception("Le mot de passe doit contenir au moins 6 caractères.");
                 if ($donnees['mot_de_passe'] !== $donnees['mot_de_passe_conf']) throw new Exception("Les mots de passe ne correspondent pas.");
@@ -150,8 +153,20 @@ class CtlAuth {
                     'mot_de_passe' => $_POST['mot_de_passe'] ?? ''
                 ];
 
+                if (trim($donnees['nom']) !== '' && !preg_match("/^[A-Za-zÀ-ÿ' -]+$/u", trim($donnees['nom']))) {
+                    throw new Exception("Le nom ne doit contenir que des lettres.");
+                }
+
+                if (trim($donnees['prenom']) !== '' && !preg_match("/^[A-Za-zÀ-ÿ' -]+$/u", trim($donnees['prenom']))) {
+                    throw new Exception("Le prénom ne doit contenir que des lettres.");
+                }
+
                 if (trim($donnees['mail']) !== '' && !filter_var(trim($donnees['mail']), FILTER_VALIDATE_EMAIL)) {
-                    throw new Exception("L'adresse email est invalide.");
+                    throw new Exception("ceci n'est pas une adresse mail valide");
+                }
+
+                if (trim($donnees['tel']) !== '' && !preg_match("/^[0-9+() .-]*$/", trim($donnees['tel']))) {
+                    throw new Exception("Le numéro de téléphone ne doit pas contenir de lettres.");
                 }
 
                 // Un mot de passe vide ne doit pas être considéré comme une mise à jour.

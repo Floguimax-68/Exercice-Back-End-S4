@@ -81,7 +81,7 @@ if (isset($titre) && stripos($titre, 'Compte') !== false) {
             </div>
 
             <div class="header-boutique-menu">
-                <div class="header-boutique-menu-item">joalerie</div>
+                <a class="header-boutique-menu-item" href="index.php?action=boutique">joalerie</a>
                 <div class="header-boutique-menu-item">haute joalerie</div>
             </div>
         </div>
@@ -92,7 +92,57 @@ if (isset($titre) && stripos($titre, 'Compte') !== false) {
     </main>
 
     <footer class="footer-site">
-        &copy; 2026 Épiphanoff & Co. - Tous droits réservés.
+        <div class="footer-site-conteneur">
+            <div class="footer-site-marque">
+                <a class="footer-site-logo" href="index.php?action=accueil" aria-label="Retour à l'accueil">
+                    <img src="src/svg/LogoEPIPHANOFFnCOFondBlanc.svg" alt="Logo Épiphanoff & Co.">
+                </a>
+            </div>
+
+            <div class="footer-site-colonnes">
+                <section class="footer-site-colonne" aria-labelledby="footer-colonne-boutique">
+                    <h2 id="footer-colonne-boutique" class="footer-site-titre-colonne">Boutique</h2>
+                    <ul class="footer-site-liste">
+                        <li>Collection femme</li>
+                        <li>Collection homme</li>
+                        <li>Pièces signature</li>
+                        <li>Nouveautés</li>
+                        <li>Best-sellers</li>
+                    </ul>
+                </section>
+
+                <section class="footer-site-colonne" aria-labelledby="footer-colonne-services">
+                    <h2 id="footer-colonne-services" class="footer-site-titre-colonne">Services</h2>
+                    <ul class="footer-site-liste">
+                        <li>Livraison</li>
+                        <li>Retours</li>
+                        <li>Entretien</li>
+                        <li>Carte cadeau</li>
+                        <li>Contact</li>
+                    </ul>
+                </section>
+
+                <section class="footer-site-colonne footer-site-colonne-sociale" aria-labelledby="footer-colonne-suivez-nous">
+                    <h2 id="footer-colonne-suivez-nous" class="footer-site-titre-colonne">Suivez-nous !</h2>
+                    <ul class="footer-site-social">
+                        <li><span class="footer-site-social-icone" aria-hidden="true"><img src="src/img/socials-icons/Facebook.svg" alt=""></span><span>Facebook</span></li>
+                        <li><span class="footer-site-social-icone" aria-hidden="true"><img src="src/img/socials-icons/Instagram.svg" alt=""></span><span>Instagram</span></li>
+                        <li><span class="footer-site-social-icone" aria-hidden="true"><img src="src/img/socials-icons/X.svg" alt=""></span><span>X</span></li>
+                        <li><span class="footer-site-social-icone" aria-hidden="true"><img src="src/img/socials-icons/LinkedIn.svg" alt=""></span><span>LinkedIn</span></li>
+                        <li><span class="footer-site-social-icone" aria-hidden="true"><img src="src/img/socials-icons/ic_baseline-tiktok.svg" alt=""></span><span>TikTok</span></li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+        <div class="footer-site-bas">
+            <p class="footer-site-copyright">&copy; 2026 Épiphanoff & Co. Tous droits réservés.</p>
+            <div class="footer-site-liens-legaux" aria-label="Informations légales">
+                <span>Privacy Policy</span>
+                <span>Terms of Service</span>
+                <span>Cookies Settings</span>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

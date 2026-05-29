@@ -15,7 +15,7 @@ $titre = "Authentification - Épiphanoff & Co.";
 <div class="authentification" id="auth">
     <!-- Background halves -->
     <div class="image-half image-left" aria-hidden="true">
-        <img src="src/img/image-connexion.png" alt="" class="image-connexion__img">
+        <img src="src/img/image-inscription.png" alt="" class="image-connexion__img">
     </div>
     <div class="image-half image-right" aria-hidden="true">
         <img src="src/img/image-connexion.png" alt="" class="image-connexion__img">
@@ -31,7 +31,7 @@ $titre = "Authentification - Épiphanoff & Co.";
                     <form id="form-login" method="POST" action="index.php?action=connexion">
                         <div class="champ-formulaire-authentification">
                             <label for="mail_conn" class="etiquette-authentification">Email :</label>
-                            <input id="mail_conn" type="email" name="mail_conn" required class="champ-saisie-authentification" placeholder="Adresse Mail">
+                            <input id="mail_conn" type="email" name="mail_conn" required class="champ-saisie-authentification" placeholder="exemple@mail.com" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" title="Saisissez une adresse email valide contenant un @">
                         </div>
                         <div class="champ-formulaire-authentification">
                             <label for="mdp_conn" class="etiquette-authentification">Mot de passe :</label>
@@ -53,19 +53,19 @@ $titre = "Authentification - Épiphanoff & Co.";
                     <form id="form-signup" method="POST" action="index.php?action=inscription">
                         <div class="champ-formulaire-authentification">
                             <label for="prenom" class="etiquette-authentification">Prénom :</label>
-                            <input id="prenom" type="text" name="prenom" required class="champ-saisie-authentification" placeholder="Prénom">
+                            <input id="prenom" type="text" name="prenom" required class="champ-saisie-authentification" placeholder="Prénom" pattern="^[A-Za-zÀ-ÿ' -]+$" title="Le prénom ne doit contenir aucun chiffre">
                         </div>
                         <div class="champ-formulaire-authentification">
                             <label for="nom" class="etiquette-authentification">Nom :</label>
-                            <input id="nom" type="text" name="nom" required class="champ-saisie-authentification" placeholder="Nom">
+                            <input id="nom" type="text" name="nom" required class="champ-saisie-authentification" placeholder="Nom" pattern="^[A-Za-zÀ-ÿ' -]+$" title="Le nom ne doit contenir aucun chiffre">
                         </div>
                         <div class="champ-formulaire-authentification">
                             <label for="mail_inscr" class="etiquette-authentification">Email :</label>
-                            <input id="mail_inscr" type="email" name="mail_inscr" required class="champ-saisie-authentification" placeholder="Adresse Mail">
+                            <input id="mail_inscr" type="email" name="mail_inscr" required class="champ-saisie-authentification" placeholder="exemple@mail.com" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" title="Saisissez une adresse email valide contenant un @">
                         </div>
                         <div class="champ-formulaire-authentification">
                             <label for="tel" class="etiquette-authentification">Téléphone (optionnel) :</label>
-                            <input id="tel" type="tel" name="tel" class="champ-saisie-authentification" placeholder="Téléphone">
+                            <input id="tel" type="tel" name="tel" class="champ-saisie-authentification" placeholder="Téléphone" pattern="^[0-9+() .-]*$" title="Le numéro de téléphone ne doit pas contenir de lettres">
                         </div>
                         <div class="champ-formulaire-authentification">
                             <label for="mdp_inscr" class="etiquette-authentification">Mot de passe (min. 8 caractères) :</label>
@@ -90,17 +90,17 @@ $titre = "Authentification - Épiphanoff & Co.";
 
                                 <div class="champ-formulaire-authentification">
                                     <label for="ville" class="etiquette-authentification">Ville (optionnel) :</label>
-                                    <input id="ville" type="text" name="ville" class="champ-saisie-authentification" placeholder="Ville">
+                                    <input id="ville" type="text" name="ville" class="champ-saisie-authentification" placeholder="Ville" pattern="^[A-Za-zÀ-ÿ' -]+$" title="La ville ne doit contenir aucun chiffre">
                                 </div>
 
                                 <div class="champ-formulaire-authentification">
                                     <label for="code_postal" class="etiquette-authentification">Code postal (optionnel) :</label>
-                                    <input id="code_postal" type="text" name="code_postal" class="champ-saisie-authentification" placeholder="Code postal">
+                                    <input id="code_postal" type="text" name="code_postal" class="champ-saisie-authentification" placeholder="Code postal" pattern="^[0-9]*$" title="Le code postal ne doit contenir que des chiffres">
                                 </div>
 
                                 <div class="champ-formulaire-authentification">
                                     <label for="pays" class="etiquette-authentification">Pays (optionnel) :</label>
-                                    <input id="pays" type="text" name="pays" class="champ-saisie-authentification" placeholder="Pays">
+                                    <input id="pays" type="text" name="pays" class="champ-saisie-authentification" placeholder="Pays" pattern="^[A-Za-zÀ-ÿ' -]+$" title="Le pays ne doit contenir aucun chiffre">
                                 </div>
                             </div>
                         </details>
