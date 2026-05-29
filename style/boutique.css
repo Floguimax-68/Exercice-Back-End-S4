@@ -1,0 +1,136 @@
+.boutique-page {
+    width: 100%;
+    padding: 32px 0 56px;
+}
+
+.titre-boutique-page {
+    margin: 0 0 10px;
+    text-align: center;
+    font-size: 58px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.texte-boutique-page {
+    max-width: 760px;
+    margin: 0 auto 30px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.boutique-page-grille {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 296px));
+    justify-content: space-between;
+    gap: 48px 24px;
+}
+
+.boutique-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.boutique-article__visuel {
+    width: 100%;
+    max-width: 296px;
+    aspect-ratio: 296 / 365;
+    border: 1px solid #000000;
+    background: #ffffff;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.boutique-article__frame {
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+}
+
+.boutique-article__nom {
+    margin: 18px 0 4px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.boutique-article__categorie {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.boutique-article__action {
+    width: 100%;
+    min-height: 40px;
+    margin-top: 22px;
+}
+
+.boutique-article__bouton {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #000000;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Bona Nova', serif;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 180ms ease, transform 180ms ease, background-color 160ms ease, color 160ms ease;
+}
+
+.boutique-article__bouton:disabled {
+    opacity: 0;
+}
+
+.boutique-article:hover .boutique-article__bouton,
+.boutique-article:focus-within .boutique-article__bouton {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.boutique-article__bouton:hover,
+.boutique-article__bouton:focus-visible {
+    background: #000000;
+    color: #ffffff;
+    outline: none;
+}
+
+.boutique-page-vide {
+    margin-top: 24px;
+    padding: 24px;
+    border: 1px solid #000000;
+    text-align: center;
+}
+
+@media (max-width: 1240px) {
+    .boutique-page-grille {
+        grid-template-columns: repeat(2, minmax(0, 296px));
+        justify-content: center;
+        gap: 32px 24px;
+    }
+}
+
+@media (max-width: 680px) {
+    .titre-boutique-page {
+        font-size: 40px;
+    }
+
+    .boutique-page-grille {
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+
+    .boutique-article__visuel {
+        max-width: 100%;
+    }
+}

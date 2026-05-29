@@ -152,32 +152,21 @@
 }
 
 .footer-site-titre-colonne {
-    position: relative;
     display: inline-block;
+    padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
     margin: 0 0 14px;
     font-size: 15px;
     font-weight: 700;
     letter-spacing: 0.02em;
     text-transform: uppercase;
+    transition: border-bottom-color 180ms ease;
 }
 
-.footer-site-titre-colonne::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -7px;
-    height: 1px;
-    background: #000000;
-    transform: scaleX(0);
-    transform-origin: left center;
-    transition: transform 180ms ease;
-}
-
-.footer-site-colonne:hover .footer-site-titre-colonne::before,
-.footer-site-titre-colonne:hover::before,
-.footer-site-titre-colonne:focus-visible::before {
-    transform: scaleX(1);
+.footer-site-colonne:hover .footer-site-titre-colonne,
+.footer-site-titre-colonne:hover,
+.footer-site-titre-colonne:focus-visible {
+    border-bottom-color: #000000;
 }
 
 .footer-site-liste,
@@ -237,28 +226,17 @@
 }
 
 .footer-site-liens-legaux span {
-    position: relative;
     display: inline-block;
+    padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
     white-space: nowrap;
     cursor: default;
+    transition: border-bottom-color 180ms ease;
 }
 
-.footer-site-liens-legaux span::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -3px;
-    height: 1px;
-    background: #000000;
-    transform: scaleX(0);
-    transform-origin: left center;
-    transition: transform 180ms ease;
-}
-
-.footer-site-liens-legaux span:hover::after,
-.footer-site-liens-legaux span:focus-visible::after {
-    transform: scaleX(1);
+.footer-site-liens-legaux span:hover,
+.footer-site-liens-legaux span:focus-visible {
+    border-bottom-color: #000000;
 }
 
 @media (max-width: 900px) {

@@ -33,6 +33,9 @@ class Routeur {
                     case "boutique":
                         $this->ctlPage->boutique();
                         break;
+                    case "administration":
+                        $this->ctlPage->administration();
+                        break;
                     case "compte":
                         $this->ctlAuth->afficherCompte();
                         break;

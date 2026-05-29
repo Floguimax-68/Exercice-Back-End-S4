@@ -76,7 +76,7 @@ class Utilisateur extends Database {
         array utilisateur si authentification réussie, null sinon
     ************************************************************/
     public function authentifier($mail, $motDePasse) {
-        $sql = "SELECT id_user, nom, prenom, mail, mot_de_passe FROM users WHERE mail = ?";
+        $sql = "SELECT * FROM users WHERE mail = ?";
 
         $req = $this->connexionBDD()->prepare($sql);
         $req->execute([$mail]);
@@ -107,7 +107,7 @@ class Utilisateur extends Database {
         array données utilisateur ou null
     ************************************************************/
     public function obtenirUtilisateur($idUser) {
-        $sql = "SELECT id_user, nom, prenom, mail, adresse, ville, code_postal, pays, tel FROM users WHERE id_user = ?";
+        $sql = "SELECT * FROM users WHERE id_user = ?";
 
         $req = $this->connexionBDD()->prepare($sql);
         $req->execute([$idUser]);

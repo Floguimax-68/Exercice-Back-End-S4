@@ -9,6 +9,24 @@
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/headercss.css">
     <?php
+    $loadBoutiqueCss = false;
+    if ((isset($titre) && stripos($titre, 'Boutique') !== false) || (isset($_GET['action']) && $_GET['action'] === 'boutique')) {
+        $loadBoutiqueCss = true;
+    }
+    if ($loadBoutiqueCss) : ?>
+    <link rel="stylesheet" href="style/boutique.css">
+    <?php endif; ?>
+
+    <?php
+    $loadAdministrationCss = false;
+    if ((isset($titre) && stripos($titre, 'Administration') !== false) || (isset($_GET['action']) && $_GET['action'] === 'administration')) {
+        $loadAdministrationCss = true;
+    }
+    if ($loadAdministrationCss) : ?>
+    <link rel="stylesheet" href="style/administration.css">
+    <?php endif; ?>
+
+    <?php
     // Load auth.css when the current page is the authentication view.
     $loadAuthCss = false;
     if (isset($titre) && stripos($titre, 'Authentification') !== false) {
@@ -39,6 +57,12 @@ if (isset($titre) && stripos($titre, 'Authentification') !== false) {
 if (isset($titre) && stripos($titre, 'Compte') !== false) {
     $classesBody[] = 'page-compte';
 }
+if (isset($titre) && stripos($titre, 'Boutique') !== false) {
+    $classesBody[] = 'page-boutique';
+}
+if (isset($titre) && stripos($titre, 'Administration') !== false) {
+    $classesBody[] = 'page-administration';
+}
 ?>
 <body class="<?= implode(' ', $classesBody) ?>">
     <header class="header-boutique">
@@ -51,6 +75,17 @@ if (isset($titre) && stripos($titre, 'Compte') !== false) {
                 </div>
 
                 <div class="header-boutique-actions">
+                    <?php if (!empty($_SESSION['utilisateur']) && (int)($_SESSION['utilisateur']['status'] ?? 0) >= 10): ?>
+                    <div class="header-btn">
+                        <div class="header-btn-icone">
+                            <img src="src/svg/user-icon.svg" alt="Icône d'administration">
+                        </div>
+                        <div class="header-btn-texte">
+                            <a href="index.php?action=administration" style="color:inherit;text-decoration:none;">Administration</a>
+                        </div>
+                    </div>
+                    <?php endif; ?>
+
                     <div class="header-btn">
                         <div class="header-btn-icone">
                             <img src="src/svg/search-icon.svg" alt="Icône de recherche">
